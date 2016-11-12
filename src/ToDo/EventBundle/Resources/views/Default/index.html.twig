@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link href="http://fonts.googleapis.com/css?family=Bitter:400,700";>
+    {% block head %}
+        <link rel="stylesheet" href="asset('src/ToDo/EventBundle/Resources/views/style.css" />
+        <title>{% block title %}{% endblock %} To Do List</title>
+    {% endblock %}
+        <style>
+                body {
+                background: #222;}
+
+
+                h1 {
+                        margin: 50px auto;
+                        text-align: center;
+                        text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+                        color: #444;
+                        opacity: 0.4;
+                        font: 700 80px 'Bitter';
+                }
+
+                h2 {
+                        margin: 50px auto;
+                        text-align: center;
+                        text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+                        color: #444;
+                        opacity: 0.4;
+                        font: 200 60px 'Bitter';
+                }
+
+                #footer{
+                        text-align: center;
+                        color:white;
+                }
+
+                li {
+                        display:block;
+                        margin:auto;
+                        text-align:center;
+                        padding: 20px 20px 20px 20px;
+                        width: 20%;
+                        border: 1px solid whitesmoke;
+                        color:whitesmoke;
+                }
+                button {
+                        display: block;
+                        height:auto;
+                        margin:auto;
+                        padding: 0px 15px 10px 15px;
+                        font: 200 60px 'Bitter',serif;
+                        line-height: 1.8;
+                        background-color: #223;
+                        box-shadow: inset 0 0 0 1px #27496d;
+                        border: none;
+                        border-radius: 15px;
+                }
+
+
+        </style>
+</head>
+<body>
+<h1 color="red"> Super Awesome To Do List </h1>
+<button>
+        <h2>Add New Sh*t</h2>
+</button>
+<br><br>
+<td>
+        <li>First Task</li>
+</td>
+<br><br>
+<div id="content">{% block content %}{% endblock %}</div>
+<div id="footer">
+    {% block footer %}
+        No tasks?! Get a beer!
+    {% endblock %}
+</div>
+</body>
+
+</html>

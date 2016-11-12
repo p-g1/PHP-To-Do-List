@@ -30,18 +30,24 @@
                 }
 
                 #footer{
-                        text-align: center;
+
+                        margin:50%;
                         color:white;
+                        position:absolute;
+                        bottom:5%;
+                        text-decoration: solid;
                 }
 
                 li {
                         display:block;
+
                         margin:auto;
                         text-align:center;
                         padding: 20px 20px 20px 20px;
                         width: 20%;
                         border: 1px solid whitesmoke;
                         color:whitesmoke;
+                        text-decoration: none;
                 }
                 button {
                         display: block;
@@ -56,6 +62,16 @@
                         border-radius: 15px;
                 }
 
+                .check{
+                        position:relatve;
+                        height: 30px;
+                        float: right;
+                        margin-top:10px;
+                        transform: translateY(-50%);
+                }
+
+
+
 
         </style>
 </head>
@@ -66,7 +82,9 @@
 </button>
 <br><br>
 <td>
-        <li>First Task</li>
+
+        <li>First Task<button class="check" type="checkbox"></li>
+
 </td>
 <br><br>
 <div id="content">{% block content %}{% endblock %}</div>

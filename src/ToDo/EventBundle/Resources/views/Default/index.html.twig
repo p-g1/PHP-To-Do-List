@@ -10,7 +10,7 @@
             $(document).ready(function () {
             var count = 1;
                 $("#add").on("click", function() {
-                    $('#list').append('<li>Sh*t to do<button class="check" type="checkbox"></li>');
+                    $('#list').append('<li>Sh*t to do '+ count+'<button class="check" type="checkbox"></li>');
                     count++;
                 })
                 //if ( $('#list ul li').length > 1 ) {}

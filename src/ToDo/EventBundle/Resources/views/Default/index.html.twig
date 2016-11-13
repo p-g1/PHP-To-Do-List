@@ -3,20 +3,26 @@
 <head>
         <link href="http://fonts.googleapis.com/css?family=Bitter:400,700";>
     {% block head %}
-        <link rel="stylesheet" href="asset('src/ToDo/EventBundle/Resources/views/style.css" />
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <link rel="stylesheet" url="src/ToDo/EventBundle/Resources/views/style.css" />
+    {% block javascripts %}
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+            <script>
+            $(document).ready(function () {
+            var count = 1;
+                $("#add").on("click", function() {
+                    $('#list').append('<li>Sh*t to do<button class="check" type="checkbox"></li>');
+                    count++;
+                })
+                //if ( $('#list ul li').length > 1 ) {}
+            });
 
-        <title>{% block title %}{% endblock %} To Do List</title>
+            </script>
     {% endblock %}
-        <script>
-                $(document).ready(function () {
 
-                                $("#add").on("click", function() {
-                                        $('#list').append('<h1>new</h1>');
-                                })
-                        });
-                });
-        </script>
+
+            <title>{% block title %}{% endblock %} To Do List</title>
+    {% endblock %}
+
 
         <style>
                 body {
@@ -42,9 +48,18 @@
                         font: 200 60px 'Bitter';
                 }
 
+                h3 {
+                    margin: 50px auto;
+                    text-align: center;
+                    text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+                    color: #444;
+                    opacity: 0.4;
+                    font: 200 60px 'Bitter';
+                }
+
                 footer{
                         margin:50px auto;
-                        margin-left: 575px;
+                        margin-left: 0px;
                         color:white;
 
                 }
@@ -101,14 +116,14 @@
 <br><br>
 <ul id="list">
 
-        <li>Just do it<button class="check" type="checkbox"></li>
+
 
 </ul>
 <br><br>
 <div id="content">{% block content %}{% endblock %}</div>
 
     {% block footer %}
-      <footer>  No tasks?! Get a beer!</footer>
+      <footer>  <h3>No tasks?! Get a beer!</h3></footer>
     {% endblock %}
 
 </body>

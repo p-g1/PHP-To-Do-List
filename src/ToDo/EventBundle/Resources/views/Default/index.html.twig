@@ -10,9 +10,14 @@
             $(document).ready(function () {
             var count = 1;
                 $("#add").on("click", function() {
-                    $('#list').append('<li><input placeholder="Sh*t to do"><button class="check" type="checkbox"></li>');
+                    $('#list').append('<li><input placeholder="Sh*t to do"><button class="check" id="check" type="checkbox"></li>');
                     count++;
                 })
+
+                $(document).on("click", "#check", function(){
+                    $(this).parent('li').remove();
+                });
+
                 //if ( $('#list ul li').length > 1 ) {}
             });
 
@@ -33,7 +38,7 @@
                         margin: 50px auto;
                         text-align: center;
                         text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
-                        color: #444;
+                        color: #666;
                         opacity: 0.4;
                         font: 700 80px 'Bitter';
 
@@ -43,7 +48,7 @@
                         margin: 50px auto;
                         text-align: center;
                         text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
-                        color: #444;
+                        color: #666;
                         opacity: 0.4;
                         font: 200 60px 'Bitter';
                 }
@@ -52,7 +57,7 @@
                     margin: 50px auto;
                     text-align: center;
                     text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
-                    color: #444;
+                    color: #666;
                     opacity: 0.4;
                     font: 200 60px 'Bitter';
                 }
@@ -75,7 +80,15 @@
                         text-decoration: none;
                 }
 
-              
+                input {
+
+                    font: 20px 'Bitter',serif;
+                    text-align:left;
+                    background: #222;
+                    color:whitesmoke;
+                    width: 80%;
+                    border: 1px solid #222;
+                }
 
                 button {
                         display: block;
@@ -98,7 +111,7 @@
                         position:relatve;
                         height: 30px;
                         float: right;
-                        margin-top:10px;
+                        margin-top:16px;
                         transform: translateY(-50%);
                 }
 
@@ -118,9 +131,6 @@
 </button>
 <br><br>
 <ul id="list">
-
-
-
 </ul>
 <br><br>
 <div id="content">{% block content %}{% endblock %}</div>

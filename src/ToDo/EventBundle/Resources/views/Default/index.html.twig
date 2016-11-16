@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <link href="http://fonts.googleapis.com/css?family=Bitter:400,700";>
+        <link href="http://fonts.googleapis.com/css?family=Bitter:400,700">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     {% block head %}
-        <link rel="stylesheet" url="src/ToDo/EventBundle/Resources/views/style.css" />
+
     {% block javascripts %}
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
             <script>
@@ -13,7 +13,7 @@
                 $("#add").on("click", function() {
                     $('#list').append('<li><input placeholder="Sh*t to do"><button class="check" id="check" type="checkbox"></li>');
                     count++;
-                })
+                });
 
                 $(document).on("click", "#check", function(){
                     $(this).parent('li').remove();
@@ -38,7 +38,7 @@
                 h1 {
                         margin: 50px auto;
                         text-align: center;
-                        text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+                        text-shadow: -1px -1px 0 rgba(255,255,255,0.3), 1px 1px 0 rgba(0,0,0,0.8);
                         color: #777;
                         opacity: 0.4;
                         font: 700 80px 'Bitter';
@@ -48,7 +48,7 @@
                 h2 {
                         margin: 50px auto;
                         text-align: center;
-                        text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+                        text-shadow: -1px -1px 0 rgba(255,255,255,0.3), 1px 1px 0 rgba(0,0,0,0.8);
                         color: #777;
                         opacity: 0.4;
                         font: 200 60px 'Bitter';
@@ -57,7 +57,7 @@
                 h3 {
                     margin: 50px auto;
                     text-align: center;
-                    text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+                    text-shadow: -1px -1px 0 rgba(255,255,255,0.3), 1px 1px 0 rgba(0,0,0,0.8);
                     color: #777;
                     opacity: 0.4;
                     font: 200 60px 'Bitter';
@@ -65,7 +65,6 @@
 
                 footer{
                         margin:50px auto;
-                        margin-left: 0px;
                         color:white;
 
                 }
@@ -82,8 +81,7 @@
                 }
 
                 input {
-
-                    font: 20px 'Roboto', sans-serif;
+                    font: 200 20px 'Roboto', sans-serif;
                     text-align:left;
                     background: #222;
                     color:whitesmoke;
@@ -109,7 +107,7 @@
                 }
 
                 .check{
-                        position:relatve;
+                        position:relative;
                         height: 30px;
                         float: right;
                         margin-top:16px;
@@ -126,7 +124,7 @@
         </style>
 </head>
 <body>
-<h1 color="red"> Super Awesome To Do List </h1>
+<h1> Super Awesome To Do List </h1>
 <button class='add' id="add">
         <h2>Add New Sh*t</h2>
 </button>

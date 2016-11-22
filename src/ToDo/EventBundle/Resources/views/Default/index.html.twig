@@ -11,7 +11,9 @@
             $(document).ready(function () {
             var count = 1;
                 $("#add").on("click", function() {
-                    $('#list').append('<li><input placeholder="Sh*t to do"><div class="buttons"><button class="check" id="done" type="checkbox"><button class="check" id="remove" type="checkbox"></div></li>');
+                    $('#list').append('<li><input placeholder="Sh*t to do"><div class="buttons">' +
+                            '<button class="check" id="done" type="checkbox"><button class="check" id="remove" ' +
+                            'type="checkbox"></div></li>');
                     count++;
                 });
 
@@ -83,6 +85,7 @@
                 input {
                     font: 200 20px 'Roboto', sans-serif;
                     text-align:left;
+
                     background: #222;
                     color:whitesmoke;
                     width: 80%;
@@ -114,8 +117,6 @@
                         margin-top: -16px;
                         transform: translateY(-50%);
                 }
-
-
 
                 #done {
                     float:right;

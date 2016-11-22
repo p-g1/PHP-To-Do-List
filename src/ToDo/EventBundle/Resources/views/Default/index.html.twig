@@ -11,7 +11,7 @@
             $(document).ready(function () {
             var count = 1;
                 $("#add").on("click", function() {
-                    $('#list').append('<li><input placeholder="Sh*t to do"><button class="check" id="check" type="checkbox"></li>');
+                    $('#list').append('<li><input placeholder="Sh*t to do"><button class="check" id="done" type="checkbox"><button class="check" id="remove" type="checkbox"></li>');
                     count++;
                 });
 
@@ -107,11 +107,22 @@
                 }
 
                 .check{
+
                         position:relative;
                         height: 30px;
-                        float: right;
+                        margin-right: 50px;
+
                         margin-top:16px;
                         transform: translateY(-50%);
+                }
+
+                #done {
+                    float:right;
+                    margin-right:50px;
+                }
+
+                #remove {
+                    float:right;
                 }
 
                 .check:hover{

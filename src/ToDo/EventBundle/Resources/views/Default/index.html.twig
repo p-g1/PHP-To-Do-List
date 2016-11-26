@@ -23,6 +23,8 @@
 
                 $(document).on("click", "#done", function(){
                     $(this).parentsUntil("#list").css('background-color', 'darkslategray');
+                    $(this).parent().siblings().css('background-color', 'darkslategray');
+                    $(this).parent().siblings().css('border', 'none');
                 });
 
                 //if ( $('#list ul li').length > 1 ) {}
@@ -87,7 +89,7 @@
                 input {
                     font: 200 20px 'Roboto', sans-serif;
                     text-align:left;
-
+                    margin-right:30px;
                     background: #222;
                     color:whitesmoke;
                     width: 80%;

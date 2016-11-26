@@ -12,13 +12,17 @@
             var count = 1;
                 $("#add").on("click", function() {
                     $('#list').append('<li><input placeholder="Sh*t to do"><div class="buttons">' +
-                            '<button class="check" id="done" type="checkbox"><button class="check" id="remove" ' +
+                            '<button class="check" id="remove" type="checkbox"><button class="check" id="done" ' +
                             'type="checkbox"></div></li>');
                     count++;
                 });
 
-                $(document).on("click", "#check", function(){
-                    $(this).parent('li').remove();
+                $(document).on("click", "#remove", function(){
+                    $(this).parentsUntil('#list').remove();
+                });
+
+                $(document).on("click", "#done", function(){
+                    $(this).parentsUntil("#list").css('background-color', 'darkslategray');
                 });
 
                 //if ( $('#list ul li').length > 1 ) {}
@@ -44,7 +48,6 @@
                         color: #777;
                         opacity: 0.4;
                         font: 700 80px 'Bitter';
-
                 }
 
                 h2 {
@@ -68,7 +71,6 @@
                 footer{
                         margin:50px auto;
                         color:white;
-
                 }
 
                 li {
@@ -118,6 +120,8 @@
                         transform: translateY(-50%);
                 }
 
+
+
                 #done {
                     float:right;
 
@@ -127,8 +131,12 @@
                     float:right;
                 }
 
-                .check:hover{
+                #done:hover{
                         background:darkslategray;
+                }
+
+                #remove:hover{
+                        background:darkred;
                 }
 
 
